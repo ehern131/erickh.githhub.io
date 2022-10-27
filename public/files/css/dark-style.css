@@ -1,0 +1,376 @@
+/*-----------------------------------------------------------------------------------
+
+		DARK THEME STYLE
+	
+----------------------------------------------------------------------------------- */
+
+/* General
+---------------------------------------- */
+body { 
+	color: rgba(255,255,255,0.81); 
+	background: #000000; 
+	}
+	.text-dark { color: rgba(0,0,0,0.74); }
+
+::selection { background:rgba(255,255,255,1); color:#000000; }
+::-moz-selection { background:rgba(255,255,255,1); color:#000000; }
+::-webkit-selection { background:rgba(255,255,255,1); color:#000000; }
+
+.text-dark ::selection { background:rgba(0,0,0,1); color:#ffffff; }
+.text-dark ::-moz-selection { background:rgba(0,0,0,1); color:#ffffff; }
+.text-dark ::-webkit-selection { background:rgba(0,0,0,1); color:#ffffff; }
+
+
+/* Headings
+---------------------------------------- */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { color: #ffffff; }
+.text-dark h1:not(.colored), .text-dark h2:not(.colored), .text-dark h3:not(.colored), .text-dark h4:not(.colored), .text-dark h5:not(.colored), .text-dark h6:not(.colored),
+h1.text-dark:not(.colored), h2.text-dark:not(.colored), h3.text-dark:not(.colored), h4.text-dark:not(.colored), h5.text-dark:not(.colored), h6.text-dark:not(.colored),
+.text-dark .h1:not(.colored), .text-dark .h2:not(.colored), .text-dark .h3:not(.colored), .text-dark .h4:not(.colored), .text-dark .h5:not(.colored), .text-dark .h6:not(.colored)  { color: #000000; }
+	
+.title-alt { 
+	color: rgba(255,255,255,0.4); 
+	}
+	.text-dark .title-alt { color: rgba(0,0,0,0.35) !important; }
+
+h1:not(.product-name) a, h2:not(.product-name) a, h3:not(.product-name) a, h4:not(.product-name) a, h5:not(.product-name) a, h6:not(.product-name) a { color: #ffffff !important; background-image: linear-gradient(#ffffff, #ffffff); }
+	.text-dark h1:not(.product-name) a, .text-dark h2:not(.product-name) a, .text-dark h3:not(.product-name) a, .text-dark h4:not(.product-name) a, .text-dark h5:not(.product-name) a, .text-dark h6:not(.product-name) a { color: #000000 !important; background-image: linear-gradient(#000000, #000000); }
+
+
+/* Forms
+---------------------------------------- */
+::-webkit-input-placeholder { color: #ffffff; opacity: 0.35; transition: all 0.3s ease; }
+:-moz-placeholder { color: #ffffff; opacity: 0.35; transition: all 0.3s ease; }
+::-moz-placeholder { color: #ffffff; opacity: 0.35; transition: all 0.3s ease; }
+:-ms-input-placeholder { color: #ffffff; opacity: 0.35; transition: all 0.3s ease; }
+
+.text-dark ::-webkit-input-placeholder { color: #000000; }
+.text-dark :-moz-placeholder { color: #000000; }
+.text-dark ::-moz-placeholder { color: #000000; }
+.text-dark :-ms-input-placeholder { color: #000000; }
+
+
+input[type=text], input[type=password], input[type=email], input[type=number],input[type=tel],input[type=date], textarea {
+	border-color: rgba(255,255,255,0.25);
+	color: #ffffff;
+	}
+	.text-dark:not(.transparent) input[type=text], .text-dark:not(.transparent) input[type=password], .text-dark:not(.transparent) input[type=email], .text-dark:not(.transparent) input[type=number], .text-dark:not(.transparent) input[type=tel], .text-dark:not(.transparent) input[type=date], .text-dark:not(.transparent) textarea { color: #000000; border-color: rgba(0,0,0,0.20); }
+
+	input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus,input[type=tel]:focus,input[type=date]:focus, textarea:focus { border-color: #ffffff; }
+	.text-dark:not(.transparent) input[type=text]:focus, .text-dark:not(.transparent) input[type=password]:focus, .text-dark:not(.transparent) input[type=email]:focus, .text-dark:not(.transparent) input[type=number]:focus, .text-dark:not(.transparent) input[type=tel]:focus,.text-dark:not(.transparent) input[type=date]:focus, .text-dark:not(.transparent) textarea:focus { border-color: #000000; }
+		
+input[type=submit], input[type=button], .button, button {
+	color: #000000;
+	background: #ffffff;
+	}
+	.text-dark input[type=submit], .text-dark input[type=button], .text-dark .button, .text-dark button {  background: #000000; color: #ffffff; }
+
+input[type=submit]:hover, input[type=button]:hover, .button:hover, button:hover { background: rgba(255,255,255,0.75); color: #000000;  }
+.text-dark input[type=submit]:hover, .text-dark input[type=button]:hover, .text-dark .button:hover, .text-dark button:hover { background: rgba(0,0,0,0.7); color: #ffffff;  }
+	
+select {
+	border-color: rgba(255,255,255,0.25);
+	color: #ffffff;
+	background-image:url(../assets/select-arrow-light.png);
+	}
+	.text-dark select { color: #000000; border-color: rgba(0,0,0,0.20); background-image:url(../assets/select-arrow.png); }
+	
+label {
+	color: rgba(255,255,255,0.4);
+	}
+	.text-dark label { color: rgba(0,0,0,0.35); }
+
+label input + span, input[type=radio] + label, input[type=checkbox] + label {
+	color: #ffffff;
+	}
+	.text-dark label input + span, .text-dark input[type=radio] + label, .text-dark input[type=checkbox] + label { color: #000000; }
+	
+label abbr { 
+	color: rgba(255,255,255,0.4);
+	}
+	.text-dark abbr { color: rgba(0,0,0,0.35); }
+
+/* contact form 7 */
+body:not(.loader-dot):not(.loader-pumping) div.wpcf7 .ajax-loader { background: rgba(255,255,255,0.12); }
+	body:not(.loader-dot):not(.loader-pumping) .text-dark div.wpcf7 .ajax-loader { background: rgba(0,0,0,0.06); }
+
+body:not(.loader-dot):not(.loader-pumping) div.wpcf7 .ajax-loader::before { background: #ffffff; }
+	body:not(.loader-dot):not(.loader-pumping) .text-dark div.wpcf7 .ajax-loader::before { background: #000000; }
+
+body.loader-dot div.wpcf7 .ajax-loader::before { background: #ffffff; }
+	body.loader-dot .text-dark div.wpcf7 .ajax-loader::before { background: #000000; }
+
+
+/* Table
+---------------------------------------- */
+table th { color: #ffffff; }
+	.text-dark table th { color: #000000; }
+
+table tr { border-color: rgba(255,255,255,0.25) !important; }
+	.text-dark table tr { border-color: rgba(0,0,0,0.2) !important; }
+
+/* Links
+---------------------------------------- */
+a { color: #ffffff; }
+	a:hover { color: rgba(255,255,255,0.5); }
+	
+	.text-dark a, a.text-dark, .text-dark a.text-dark  { color: #000000; }
+	.text-dark a:hover, a.text-dark:hover, .text-dark a.text-dark:hover  { color: rgba(0,0,0,0.5); }
+
+p a:not(.entry-navigation__item):not(.post-edit-link):not(.fancybox):not(.button):not(.image-text-link) {
+	border-color: rgba(255,255,255,0.25);
+	color: #ffffff;
+	}
+	p a:not(.entry-navigation__item):not(.post-edit-link):not(.fancybox):not(.button):not(.image-text-link):hover { border-color: #ffffff; }
+	.text-dark p a:not(.entry-navigation__item):not(.post-edit-link):not(.fancybox):not(.button):not(.image-text-link) { border-color: rgba(0,0,0,0.2); color: #000000; }
+	.text-dark p a:not(.entry-navigation__item):not(.post-edit-link):not(.fancybox):not(.button):not(.image-text-link):hover { border-color: #000000; }
+	
+/* Lists
+---------------------------------------- */
+ul.biglist li, ol.biglist li, ul.nolist li, ol.nolist li {
+	color: #ffffff;
+	}
+	.text-dark ul.biglist li, .text-dark ol.biglist li, .text-dark ul.nolist li, .text-dark ol.nolist li { color: #000000; }
+
+/* Others
+---------------------------------------- */
+blockquote { color: #ffffff; }
+	.text-dark blockquote, blockquote.text-dark { color: #000000; }
+
+pre { background: #ffffff; color: #000000; }
+	.text-dark pre { background: #000000; color: #ffffff; }
+
+code, kbd, tt { background: #ffffff; color: #000000; }
+	.text-dark code, .text-dark kbd, .text-dark tt { background: #000000; color: #ffffff; }
+
+mark { background: #ffffff; color: #000000; }
+	.text-dark mark { background: #000000; color: #ffffff; }
+
+
+
+
+/*---------------------------------------------- 
+
+2. GENERAL ELEMENTS
+
+------------------------------------------------*/
+	
+/* icons */
+i[class*='ion-'], i[class*='fa-'] { color: #ffffff; }
+.text-dark i[class*='ion-'], .text-dark i[class*='fa-'] { color: #000000; }
+
+#header.sticky::after { background: #000000; }
+
+header #logo img#dark-logo { opacity: 0; visibility: hidden; }
+header #logo img#dark-logo + img#light-logo { opacity: 1; visibility: visible; }
+
+.filter-icon span, .filter-icon span::after, .filter-icon span::before { background: #ffffff; }
+	.text-dark .filter-icon span, .text-dark .filter-icon span::after, .text-dark .filter-icon span::before { background: #000000; }
+
+.search { fill: #ffffff; }
+	.text-dark .search { fill: #000000; }
+
+.arrow { fill: #ffffff; }
+	.text-dark .arrow { fill: #000000; }
+
+#header-actions-overlay .action-close::after, #header-actions-overlay .action-close::before { background-color: #ffffff; }
+	#header-actions-overlay .action-close:hover::after, #header-actions-overlay .action-close:hover::before { background-color: #808080; }
+
+#header-actions-overlay .action-overlay .category-list li a { color: #ffffff; }
+#header-actions-overlay .action-overlay .category-list li a::after { background: rgba(255,255,255,0.31); }
+#menu.throughline ~ #header-actions-overlay .action-overlay .category-list li a::after  { background: #ffffff; }
+
+nav#main-nav ul > li > a { color: #ffffff; }
+nav#main-nav ul > li > a::after { background: rgba(255,255,255,0.31); }
+	.throughline nav#main-nav ul > li > a::after {background: #ffffff; }
+
+@media only screen and (min-width: 1025px) {
+	#menu.classic #menu-inner.text-dark nav#main-nav > ul > li > a { color: #000000; }
+	#menu.classic #menu-inner.text-dark nav#main-nav ul > li > a::after { background: rgba(0,0,0,0.26); }
+	#menu.classic.throughline #menu-inner.text-dark nav#main-nav ul > li > a::after { background: #000000; }
+	#menu.classic nav#main-nav > ul > li > ul.sub-menu { background: #000000; }
+}
+
+.menu-toggle span.hamburger, .menu-toggle span.hamburger:after, .menu-toggle span.hamburger:before { background: #ffffff; }
+header:not(.menu-is-open) .text-dark .menu-toggle span.hamburger, 
+header:not(.menu-is-open) .text-dark .menu-toggle span.hamburger:after, 
+header:not(.menu-is-open) .text-dark .menu-toggle span.hamburger:before {
+background: #000000;
+}
+
+
+
+/*---------------------------------------------- 
+
+8. HERO / PAGETITLE
+
+------------------------------------------------*/	
+#hero { background: #000000; }
+#hero.text-dark { background: #ffffff; }
+
+#hero #scrolldown span.text { color: #ffffff; }
+	#hero #scrolldown.text-dark span.text { color: #000000; }
+
+#hero #scrolldown .scroll-icon { border-color: #ffffff; }
+	#hero #scrolldown.text-dark .scroll-icon { border-color: #000000; }
+
+#hero #scrolldown .scroll-icon::after { background: #ffffff; }
+	#hero #scrolldown.text-dark .scroll-icon::after { background: #000000; }
+
+
+
+/*---------------------------------------------- 
+
+9. PORTFOLIO
+
+------------------------------------------------*/
+.portfolio-category { color: rgba(255,255,255,0.4); }
+	.text-dark .portfolio-category { color: rgba(0,0,0,0.35); }
+
+
+
+/*---------------------------------------------- 
+
+10. BLOG
+
+------------------------------------------------*/
+.post-date { color: rgba(255,255,255,0.4); }
+	.text-dark .post-date { color: rgba(0,0,0,0.35); }
+
+.blog-item.sticky .blog-info { background: rgba(255,255,255,0.12); }
+	.text-dark .blog-item.sticky .blog-info { background: rgba(0,0,0,0.06); }
+
+
+.post-date + .meta-author::before, .post-cat + .meta-author::before { background: rgba(255,255,255,0.25); }
+	.text-dark .post-date + .meta-author::before, .text-dark .post-cat + .meta-author::before { color: rgba(0,0,0,0.2); }
+
+#page-title .post-meta .meta-author span { color: rgba(255,255,255,0.4); }
+	.text-dark #page-title .post-meta .meta-author span { color: rgba(0,0,0,0.35); }
+
+.comments .time { color: rgba(255,255,255,0.4); }
+	.text-dark .comments .time { color: rgba(0,0,0,0.35); }
+
+
+
+/*---------------------------------------------- 
+
+12. PAGE LOADER
+
+------------------------------------------------*/
+#page-loader { background: #000000; }
+body:not(.loader-dot):not(.loader-pumping) #page-loader .loader-icon { background: rgba(255,255,255,0.12); }
+body:not(.loader-dot):not(.loader-pumping) .loader-icon::after { background: #ffffff; }
+body.loader-dot .loader-icon::after { background: #ffffff; }
+
+
+
+/*---------------------------------------------- 
+
+13. PAGINATION
+
+------------------------------------------------*/	
+#single-pagination .pagination li a[data-title] { color: rgba(255,255,255,0.4); }
+#single-pagination .pagination li a[data-title]::after { color: #ffffff; }
+	#single-pagination .pagination li a[data-title]:hover::after { color: rgba(255,255,255,0.5); }
+#single-pagination.fixed .pagination li .page-image { background: #262626; }
+#page-pagination .pagination li.page span, #page-pagination .pagination li.page a { color: rgba(255,255,255,0.4); }
+	#page-pagination .pagination li.page span.current,
+	#page-pagination .pagination li.page a:hover { color: #ffffff; }
+
+
+
+/*---------------------------------------------- 
+
+14. EXTERN PLUGINS (smartscroll,masonry,revolution slider, owl)
+
+------------------------------------------------*/
+.lazy-wrapper { background: rgba(255,255,255,0.12); }
+
+
+
+/*---------------------------------------------- 
+
+16. FULLWIDTH SECTION
+
+------------------------------------------------*/	
+.fullwidth-section { background: rgba(255,255,255,0.12); }
+	.fullwidth-section.text-dark { background: rgba(255,255,255,1); }
+
+
+/*---------------------------------------------- 
+
+18. ANIMATIONS (portfolio, hero, text, ...)
+
+------------------------------------------------*/
+.do-anim-modern::after { background: #000000; }
+	.text-dark:not(.isotope-grid) .do-anim-modern::after { background: #ffffff; }
+
+
+
+/*---------------------------------------------- 
+
+19. ELEMENTS
+
+------------------------------------------------*/
+
+/*	Buttons
+-------------------------------------------------*/
+.sr-button { background: #ffffff; color: #000000 !important; }
+	.text-dark .sr-button { background: #000000; color: #ffffff !important; }
+	.sr-button:not(.header-button):hover { background: rgba(255,255,255,0.75); }
+	.text-dark .sr-button:not(.header-button):hover { background: rgba(0,0,0,0.7); }
+
+.sr-button.style-2 {  background: rgba(255,255,255,0.22) !important; color: #ffffff !important; }
+.sr-button.style-2:hover { background: rgba(255,255,255,0.34) !important; color: #ffffff !important; }
+	.text-dark .sr-button.style-2 { background: rgba(0,0,0,0.08) !important; color: #000000 !important; }
+	.text-dark .sr-button.style-2:hover { background: rgba(0,0,0,0.14) !important; color: #000000 !important; }
+
+.sr-button.style-3 { color: #ffffff !important; border-color: rgba(255,255,255,0.3) !important; }
+.sr-button.style-3:hover { border-color: #ffffff !important; }
+	.text-dark .sr-button.style-3 { color: #000000 !important; border-color: rgba(0,0,0,0.25) !important; }
+	.text-dark .sr-button.style-3:hover { border-color: #000000 !important; }
+
+/* icon button */	
+.sr-button-icon {
+	background: #ffffff;
+	color: #000000;
+	}
+	.text-dark .sr-button-icon { background: #000000; color: #ffffff; }
+	.sr-button-icon i { color: #000000; }
+	.text-dark .sr-button-icon i { color: #ffffff; }
+
+
+/*	team member
+-------------------------------------------------*/		
+.team-role { color: rgba(255,255,255,0.4); }
+	.text-dark .team-role { color: rgba(0,0,0,0.35); }
+
+
+/*---------------------------------------------- 
+
+20. WIDGETS
+
+------------------------------------------------*/
+.widget ul:not(.socialmedia-widget) li a {
+	color: #ffffff;
+	background-image: linear-gradient(#ffffff, #ffffff);
+	}
+	.text-dark .widget ul:not(.socialmedia-widget) li a { color: #000000; background-image: linear-gradient(#000000, #000000); }
+
+/* Social Media Widget
+-------------------------------- */	
+.socialmedia-widget li a {
+	color: #ffffff;
+	}
+	.text-dark:not(.transparent) .socialmedia-widget li a { color: #000000; }
+
+/*	Recent Posts
+------------------------------------------------*/		
+.widget_recent_entries li span.post-date { color: rgba(255,255,255,0.81); }
+	.text-dark:not(.transparent) .widget_recent_entries li span.post-date,
+
+/* iotope load more */
+.load-isotope .load-isotope-icon { background: rgba(255,255,255,0.12); }
+	.text-dark .load-isotope:after { background: rgba(0,0,0,0.06); }
+.load-isotope .load-isotope-icon:before { background: #ffffff; }
+	.text-dark .load-isotope .load-isotope-icon:before { background: #000000; }

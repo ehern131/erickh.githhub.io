@@ -1,0 +1,1675 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+	
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Orio HTML Template Documentation</title>
+    <link rel="stylesheet" href="./files/style.css" type="text/css">
+
+	<script src="files/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+		jQuery(window).load(function() {
+			jQuery('#main-nav').on("click", "li a", function() { 
+				if (jQuery(this).siblings('.submenu').length > 0) { 
+					var thisEl = jQuery(this).siblings('.submenu');
+					jQuery('#main-nav .submenu').not(thisEl).slideUp(300);  
+					jQuery(this).siblings('.submenu').slideToggle(300);  
+					return false;
+				}
+			});
+			
+		});
+	</script>
+    
+</head>
+
+<body>
+<div id="page-wrapper">
+
+	<header>
+    	<div class="header-inner clearfix">
+        
+        	<div id="logo"><img src="files/images/sr-logo.png" srcset="files/images/sr-logo.png 1x, files/images/sr-logo@2x.png 2x" alt="Logo Spab Rice"></div>
+            
+            <div id="menu">
+            	<nav id="main-nav">
+					<ul>
+                    	<li><a href="#introduction">Getting Started</a>
+                        	<ul class="submenu">
+                            	<li><a href="#introduction">Introduction</a></li>
+                            	<li><a href="#support">Support</a></li>
+                            	<li><a href="#html-structure">Basic HTML structure</a></li>
+                            	<li><a href="#general-css">CSS</a></li>
+                            	<li><a href="#fonts">Fonts</a></li>
+                            	<li><a href="#general-js">Javascript</a></li>
+                            	<li><a href="#preloader">Preloader</a></li>
+                            	<li><a href="#darkstyle">Dark Style</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#header">Header & Hero</a>
+                        	<ul class="submenu">
+                            	<li><a href="#header">Header Structure</a></li>
+                            	<li><a href="#header-options">Header Options</a></li>
+                            	<li><a href="#logo-section">Logo</a></li>
+                            	<li><a href="#menu-section">Menu</a></li>
+                            	<li><a href="#hero">Hero / Pagetitle</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#portfolio">Portfolio</a>
+                        	<ul class="submenu">
+                            	<li><a href="#portfolio">Portfolio Setup</a></li>
+                            	<li><a href="#portfolio-filter">Filter</a></li>
+                            	<li><a href="#portfolio-pagination">Pagination</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="#blog">Blog</a></li>
+                                                
+                        <li><a href="#isotope">Features</a>
+                        	<ul class="submenu">
+                            	<li><a href="#fullwidth-section">Fullwidth Section</a></li>
+                            	<li><a href="#isotope">Isotope / Masonry</a></li>
+                            	<li><a href="#slider">Slider</a></li>
+                            	<li><a href="#lightbox">Lightbox</a></li>
+                            	<li><a href="#bg-parallax">Background Parallax</a></li>
+                            	<li><a href="#video">Video</a></li>
+                            	<li><a href="#audio">Audio</a></li>
+                            	<li><a href="#lazy">Lazy Load</a></li>
+                            	<li><a href="#googlemap">Google Map</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="#isotope">Elements / Shortcodes</a>
+                        	<ul class="submenu">
+                            	<li><a href="#grid">Columns / Grid</a></li>
+                            	<li><a href="#contact">Contact Form</a></li>
+                            	<li><a href="#animation">Animations</a></li>
+                            	<li><a href="#hover">Hover Effects</a></li>
+                            	<li><a href="#spacer">Spacer</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="#credits">Ressources / Credits</a></li>
+                        
+                        <li><a href="#changelog">Changelog</a></li>
+                    </ul>
+            	</nav>
+            </div>
+        	
+        </div>
+    </header>
+    
+    <div id="page-body">
+    
+        <div id="page-hero">
+            <h1><strong class="colored">Orio</strong> Documentation</h1>
+            <h4 class="subtitle">HTML Template</h4>
+            <p class="intro">A how-to guide and helpful informations <br>about options and features of the template.</p>
+        </div>
+    
+    
+    	<section id="introduction">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Introduction</strong></h3>
+                
+                <p>You bought an HTML / CSS template, so you need some basic knowledge for those 2 languages.
+                <br>The best way is to play around with the different elements, but you'll find some helpfull tips and explanations how this template is build up and works.</p>
+                <p><strong>Please compare all the examples from this documentation with the original files to have a better understanding.</strong></p>
+                
+            </div>        	
+        </section>
+        
+        <section id="support">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Support</strong></h3>
+                
+                <p>Please read and search this documentation file before seeking support. If you have any questions that are beyond the scope of this document you can still contact me and open a support ticket <a href="http://www.spab-rice.com/support">here</a>. </p>
+                
+                <p class="alert-note"><strong>Do not use the comment section on the themeforest item page.<br>This will slow down the support process.</strong></p>
+                
+            </div>        	
+        </section>
+        
+        
+        <section id="html-structure">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Basic HTML structure</strong></h3>
+                
+                <p>Orio follows a simple and basic coding structure.</p>
+                
+                <pre>
+&lt;!doctype html>
+&lt;html class="no-js" lang="en-US">
+&lt;head>
+
+ <span>&lt!-- Including of Stylesheets, Fonts, Meta Tags & Title --></span>
+ ...
+
+&lt;/head>
+
+&lt;body>
+
+  <em>&lt!-- Main content wrapper --></em>
+  &lt;div id="page-content"&gt;
+  
+    <span>&lt!-- HEADER --></span>
+    &lt;header id="header"&gt;
+      ...
+    &lt;/header&gt;
+  
+    <span>&lt!-- HERO & BODY --></span>
+    &lt;div id="hero-and-body">	
+      
+      <span>&lt;!-- HERO  --></span>
+      &lt;section id="hero"&gt;
+      ...
+      &lt;/section&gt;
+  
+      <span>&lt!-- PAGEBODY --></span>
+      &lt;section id="page-body"&gt;
+      ...
+      &lt;/section&gt;
+      
+    &lt;/div>
+  	
+    <span>&lt!-- FOOTER --></span>	
+    &lt;footer id="footer"&gt;
+      ...
+    &lt;/footer&gt;
+	
+  &lt;/div&gt;
+ 
+  <span>&lt!-- Including of Scripts (Javascript) --></span>
+  ...
+ 
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                
+                <p>This is the default html structure you need to respect in all your pages.  You're not forced to use all of the section of course. If you don't want a footer or hero for example, just delete this section <em>(example: in the index-freelancer no hero is used)</em>.  But if you do so, please use the structure like above with the correct id's.</p>
+                               
+                               
+                <br>
+                <h4>General Content width</h4>               
+				<p>By default the content is limited to <strong>1440px</strong>.  You can increase this by using <code>limit-big</code> which will set it to 1680px or <code>limit-full</code> which always ill use the full width.  Add one of these options to the body tag.  </p>
+                <pre>&lt;body class="<span>limit-big</span>"></pre>
+                                
+            </div>        	
+        </section>
+        
+        
+        
+        <section id="general-css">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>CSS</strong></h3>
+                <p>These 4 css files must be included in all of your html files</p>
+                <pre>
+<em>&lt;!-- CSS --></em>
+&lt;link rel="stylesheet" id="default-style-css"  href="files/css/style.css" type="text/css" media="all" />
+&lt;link rel="stylesheet" id="fontawesome-style-css" href="files/css/font-awesome.min.css" type="text/css" media="all" />
+&lt;link rel="stylesheet" id="ionic-icons-style-css" href="files/css/ionicons.css" type="text/css" media="all" />
+...
+&lt;link rel="stylesheet" id="mqueries-style-css"  href="files/css/mqueries.css" type="text/css" media="all" />
+                </pre>
+                <p>All other css are only needed if you use the related script. (isotope, owlcarousel, lightcase, ...)</p>
+                
+                <br>
+                <h4>General Css classes</h4>
+                <p>These are general classes, which you will find frequently in almost all html files, and whhich you can use for in any page or part of your site.</p>
+                <ul>
+                	<li><code>.wrapper-small</code> same use than .wrapper but with smaller size (780px)</li>
+                	<li><code>.wrapper-medium</code> same use than .wrapper but using a bigger width (1024px)</li>
+                	<li><code>.clearfix</code> for all elements which contains any floating element</li>
+                	<li><code>.clear</code> add a clear element after the last floating element <em>(use this if the parent container doesn't have .clearfix)</em></li>
+                	<li><code>.align-center</code> use this class if you want to center align the text for a whole section or just an element</li>
+                	<li><code>.align-right</code> use this class if you want to right align the text for a whole section or just an element</li>
+                	<li><code>.text-light</code> this class is needed if you use a darker background for a section <em>(for example a dark parallax section)</em></li>
+                	<li><code>.text-dark</code> same as text-light but for light backgrounds with dark text (only if you use dark-style.css)</em></li>
+                </ul>
+                
+                <br>
+                <h4>Customize CSS</h4>
+                <p>If you want to customize some parts of the css, it's recommended to use a custom css file <strong>yourcustomfile.css</strong> where you put all your customizations.  This will make it much more easier if you need to update the template some day. <em>See index-video.html for examlpe</em></p>
+                <p>You will find a <strong>custom-sample.css</strong> which already includes all font selectors & rules.  So if you want to change the font, just replace the font name with yours.</p>
+                
+                <br>
+                <h4>Inline CSS</h4>
+                <p>Sometimes you will see some inline css for some html elements (mostly for hero or fullwidth section).</p>
+                <pre>&lt;div class="fullwidth-section" <span>style="background:red;"</span>></pre>
+				<p><span class="tip-important">Important</span> In general, inline css is not the good way to go, and you should try to avoid it. (use classes and add to custom css)<br>But I decided to use it for some elements because it's just a minor change (usually background or color) which would be much more complicated for your understanding to add a custom classes to each element which need these changes.</p>
+                                
+            </div>        	
+        </section>
+        
+        
+        
+        <section id="fonts">
+        	<div class="section-inner wrapper">
+            
+                <h3 class="colored section-title"><strong>Fonts</strong></h3>
+               	<p>
+                	All fonts (except icon fonts) which are used by this template are comming from the Google font library.
+                </p>
+                <pre>
+<em>&lt;!-- FONTS --></em>
+&lt;link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+</pre>
+				<p>Depending on the demo, the template uses different fonts.  Please check this on the head of the file.</p>
+                
+                <br><br>
+                <h4>Customize fonts</h4>
+				<p>You can of course change/use other fonts.  The <strong>custom-font-sample.css</strong> file has a full list with all elements using which font.<br>It's recommended to copy all this code from the sample file to your custom css file and adapt all the different font settings and styles to your need.</p>
+                
+                <br><br>
+                <h4>Headings / Titles</h4>
+                <p>By default the headings (h1,h2,h3,h4,h5,h6) uses the main font "Roboto". There are some predefined classes for "manipulating" the default headings.</p>
+                <ul>
+                	<li><code>title-alt</code> will lower the color opacity</li>
+                	<li><code>uppercase</code> will transform the letters to uppercases and add some more letter spacing</li>
+                </ul>
+                <pre>
+&lt;h2 class="<span>title-alt</span>">Hello World&lt;/h2>
+
+&lt;h2 class="<span>uppercase</span>">Hello World&lt;/h2>
+   
+&lt;h2 class="<span>title-alt uppercase</span>">Hello World&lt;/h2></pre>
+
+				<br><br>
+                <h4>Icon fonts</h4>
+                <p>The template also includes icon fonts which are mandatory for all your pages.  So make sure to have these icon fonts inlcuded in all of your html files.</p>
+                <pre>
+<em>&lt;!-- CSS --></em>
+...
+&lt;link rel="stylesheet" id="fontawesome-style-css" href="files/css/font-awesome.min.css" type="text/css" media="all"/>
+&lt;link rel="stylesheet" id="ionic-icons-style-css" href="files/css/ionicons.css" type="text/css" media="all"/>
+...</pre>  
+            
+            </div>        	
+        </section>
+        
+        
+        
+        <section id="general-js">
+        	<div class="section-inner wrapper">
+            
+                <h3 class="colored section-title"><strong>Javascript</strong></h3>
+                <p>All js scripts are inlcuded at the bottom of the html file just before the <code>body</code> closes.  Make sure to include these 3 js files in all of your html files</p>
+                <pre>
+<em>&lt;!-- SCRIPTS -->  </em>              
+&lt;script src="files/js/jquery-1.12.4.min.js">&lt;/script>
+&lt;script src="files/js/plugins.js">&lt;/script>
+...
+&lt;script src="files/js/script.js">&lt;/script>
+<em>&lt;!-- SCRIPTS --></em></pre>
+				<p>All other js are only needed if you use the related script. (isotope, owlcarousel, video background, lightcase...)</p>
+                
+            </div>        	
+        </section>
+        
+        
+        
+        <section id="preloader">
+        	<div class="section-inner wrapper">
+            
+                <h3 class="colored section-title"><strong>Preloader</strong></h3>
+                
+                <p>
+                Every page has a preloader effect which displays a loading animation while the content has fully loaded.<br>
+                Here's the markup you will find in all html files.  <br>
+                <small>The code should be placed directly after the body opening.</small>
+                </p> 
+                
+                <pre>
+&lt;body class="<span>loader-dot</span>">
+
+<em>&lt;!-- PAGELOADER --></em>
+&lt;div id="page-loader">
+	&lt;span class="loader-icon">&lt;/span>
+&lt;/div>
+<em>&lt;!-- PAGELOADER --></em></pre>
+				<p><code>.loader-dot</code> Choose between <strong>loader-dot</strong> and <strong>loader-line</strong> for a different loader icon. It's important to add this class to the body tag!</p>
+				<br>
+				<p>If you don't want a preloader effect just delete the whole preloader markup from your html files.</p>               
+            
+            </div>        	
+        </section>
+        
+        
+        
+        <section id="darkstyle">
+        	<div class="section-inner wrapper">
+               
+                <h3 class="colored section-title"><strong>Dark Style</strong></h3>
+                
+                <p>By default the template has a light/white style but you can easily do a dark appearance by just including the dark-style.css. <em>See index-video.html</em><br>
+          	
+          	    <pre>
+
+ <em>&lt!-- CSS --></em>
+ &lt;link rel="stylesheet" id="default-style-css"  href="files/css/style.css" type="text/css" media="all" />
+ <span>&lt;link rel="stylesheet" id="dark-style-css"  href="files/css/dark-style.css" type="text/css" media="all" /></span>
+ ...
+
+&lt;/head>
+
+&lt;body class="<span>dark-style</span>">
+
+  ...</pre>      
+				<p><span class="tip-note">Note</span> The dark-style css file must be inlcuded immediately after the default style.</p> 
+				<p><span class="tip-important">Important</span> You also need to add the class <code>dark-style</code> to the body tag.</p> 
+           	
+        	</div>        	
+        </section>
+        
+        
+        
+        <section id="header">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Header STructure</strong></h3>
+                
+                <p>See here the default header structure</p>
+                <pre>
+<span>&lt;!-- HEADER --></span>
+&lt;header id="header" class="onhero">        
+  &lt;div class="header-inner clearfix">
+    
+    <span>&lt;!-- LOGO --></span>
+    &lt;div id="logo">
+      &lt;a href="index.html">
+        &lt;img src="files/uploads/mylogo.png" alt="My Logo">
+      &lt;/a>
+    &lt;/div>
+    
+    <span>&lt;!-- MAIN NAVIGATION --></span>
+    &lt;div id="menu" class="clearfix">
+    ...
+    &lt;/div>
+    
+    <span>&lt;!-- HEADER ACTIONS --></span><em>(optional)</em>
+    &lt;div id="header-actions">
+    ...
+    &lt;/div>
+    
+    <span>&lt;!-- HEADER ACTIONS OVERLAY --></span><em>(optional)</em>
+    &lt;div id="header-actions-overlay">
+    ...
+    &lt;/div>
+    
+    <span>&lt;!-- HEADER WIDGET --></span><em>(optional)</em>
+    &lt;div id="header-widget">
+    ...
+    &lt;/div>
+  
+ &lt;/div> <em>&lt!--END .header-inner --></em>
+&lt;/header>
+<span>&lt;!-- HEADER --></span></pre>  
+			<p><code>#header-widget</code> Please only use the header-widget if you go with a sidebar menu (not classic).</p>   	
+            </div>     
+        </section>
+        
+        
+        
+         <section id="header-options">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Header Options</strong></h3>
+                
+                <p>You can choose between multiple Header appearence options while creating your Pages. simply add the css class to the Header Element and your header will apply the given rule.</p>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.sticky</code>
+						<p>The header will be sticky and always visible on scrolling. <em><small>See index-vide.html</small></em></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;header id="header" class="<span>sticky</span>">
+  ...
+&lt;/header></pre>
+                    </div>
+                </div>
+                
+            </div>        	
+        </section>
+        
+        
+        <section id="logo-section">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Logo</strong></h3>
+                <p>You'll find the logo container in the header element <code>#header</code>.  
+                <pre>
+...
+&lt;div id="logo">
+  &lt;a href="index.html">
+    <span>&lt;img id="dark-logo" src="files/uploads/mylogo.png" alt="Dark Logo"></span>
+    -- AND / OR --
+    <span>&lt;img id="light-logo" src="files/uploads/mylogo.png" alt="Light Logo"></span>
+  &lt;/a>
+&lt;/div>
+...</pre>
+                <p><span class="tip-note">Note</span> if your header is not sticky you can just inlude the logo (light or dark) you need.  If you go with a sticky header it is recommended to include both logo versions.</p>               
+                <p><span class="tip-important">Important</span> You must adapt some css elements with the height of your logo. <br>Please have a look at <strong>"Adapt / Change the CSS"</strong> below, if your logo have a different height than the original Orio logo.</p>               
+            
+                <br><br>
+                <h4>Adapt / Change the Css</h4>
+                <p><span class="tip-note">Note</span> Depending on your logo height you need to adapt the style.css. Open the style.css and scroll to the bottom. Adapt the values depending on your logo height, or copy the code to your custom css file and adapt the values there (recommended).</p>
+                <p>The original Orio logo used has a height of 30px.</p>
+                <pre>
+<em>/* DESKTOP LOGO SIZE (replace the 30px with your custom logo height) */</em>
+header #logo .text-logo { line-height: <span>30px</span>; }
+#header #logo img { height: <span>30px</span>; }
+#header-actions { top: calc(160px + <span>30px</span>); }
+#header-actions-overlay { top: calc(160px + <span>30px</span>); }
+header #header-actions-overlay::after { top: calc(-160px - <span>30px</span>); }
+#menu:not(.classic) #menu-inner { margin-top: calc(160px + <span>30px</span>); }
+#hero.hero-full { min-height: calc(100vh - 160px - <span>30px</span>); } 
+#hero.hero-full > .google-map { height: calc(100vh - 160px - <span>30px</span>) !important; } 
+#single-share.fixed { top: calc(160px + <span>30px</span>); }
+
+#header:not(.sticky) + #hero-and-body #hero.hero-fullscreen + #page-body { margin-top:  calc(0px - 160px - <span>30px</span>); }
+#header:not(.sticky) + #hero-and-body #hero.hero-fullscreen { top: calc(0px - 160px - <span>30px</span>); }
+#header.sticky + #hero-and-body #hero:not(.hero-fullscreen) { margin-top: calc(0px + 160px + <span>30px</span>); }
+#header.sticky + #hero-and-body > #page-body:first-child { margin-top: calc(0px + 160px + <span>30px</span>); }
+#hero.hero-fullscreen #page-title { padding-top: calc(160px + <span>30px</span>) !important; }
+#hero.hero-fullscreen #page-title:not(.title-bottom) { padding-bottom: calc(100px + <span>30px</span>) !important; }
+#hero.hero-fullscreen.content-overlay #page-title { padding-bottom: calc(1<span>30px</span> + <span>30px</span>) !important;}
+#hero.hero-fullscreen.content-overlay #page-title.title-bottom { padding-bottom: calc(100px + 60px + <span>30px</span>) !important;}
+
+@media only screen and (max-width: 1200px) {
+#header:not(.sticky) + #hero-and-body #hero.hero-fullscreen.content-overlay + #page-body { margin-top:  calc(0px - 160px - 80px - <span>30px</span>);}
+}</pre>
+<p>So if you have a logo height of 40px for example, you would need to replace <strong>30px by 40px</strong>.</p>
+
+				<br>
+                <h5>Responsive Logo adaptations</h5>
+				<p>On mobile devices the logo get resized to 25px.  If you want a different size adapt the values.</p>
+                <p><span class="tip-note">IMPORTANT</span> If you choose a bigger size than 30px for the responsive mode, please change all 30px values below.  This is only needed if it's bigger than 30px.</p>
+<pre>
+<em>/*---------------------------------------------- 
+
+22. RESPONSIVE LOGO SIZE
+
+------------------------------------------------*/</em>
+@media only screen and (max-width: 768px) {
+	#header #logo img { height: <span>25px</span> !important; }
+}
+
+<em>/* 		!!!!!! */
+/*		If your responsive logo height is bigger than 30px, please change all '30px' values below 	*/
+/*		!!!!!! */</em>
+@media only screen and (max-width: 768px) {
+	#hero.hero-full { min-height: calc(100vh - 80px - <span>30px</span>); } 
+	#hero.hero-full > .google-map { height: calc(100vh - 80px - <span>30px</span>) !important; }
+	#header:not(.sticky) + #hero-and-body #hero.hero-fullscreen + #page-body { margin-top:  calc(0px - 80px - <span>30px</span>) !important; }
+	#header:not(.sticky) + #hero-and-body #hero.hero-fullscreen.content-overlay + #page-body { margin-top:  calc(0px - 105px - <span>30px</span>) !important; }
+	#header:not(.sticky) + #hero-and-body #hero.hero-fullscreen { top: calc(0px - 80px - <span>30px</span>) !important; }
+	#hero.hero-fullscreen #page-title { padding-top: calc(80px + <span>30px</span>) !important; }
+	#hero.hero-fullscreen #page-title,
+	#hero.hero-fullscreen.content-overlay #page-title,
+	#hero.hero-fullscreen.content-overlay #page-title.title-bottom { padding-bottom: 80px !important; }
+}</pre>
+
+                
+                <br><br>
+            	<h4>Making the logo retina ready</h4>
+                <p>To make your logo (or any kind of image) ready for retina devices you just need to have 2 image files for each logo (image).</p>
+                <ul>
+                	<li><strong>One with the normal size</strong> (ex. 130px * 50px)</li>
+                    <li><strong>and the second with the doubled size</strong> (ex. 260px * 100px)</li>
+                </ul>
+                <p>Now you just need to tell the html that it should include the doubled size for retina devices by using the srcset attribute.</p>
+				<pre>&lt;img src="logo.png" srcset="logo.png 1x, logo@2x.png 2x"></pre>
+                <p>Please have also a look on the web for more information about the srcset attribute.</p>
+                
+            </div>        	
+        </section>
+        
+        
+        
+        <section id="menu-section">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Menu</strong></h3>
+                <p>Here's the general markup for the main navigation which is located in the header part.</p>
+                
+                <pre>
+<em>&lt;!-- MAIN NAVIGATION --></em>
+&lt;div id="menu" class="clearfix">
+  
+  &lt;div class="menu-actions">
+    &lt;div class="menu-toggle">&lt;span class="hamburger">&lt;/span>&lt;/div>
+  &lt;/div> <!-- END .menu-actions -->
+  
+  &lt;div class="menu-inner">
+  
+    &lt;nav id="main-nav">
+      &lt;ul>
+        &lt;li class="<span>current_page_item</span>">&lt;a href="index.html">Home&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="portfolio.html">Work&lt;/a>&lt;/li>
+        ...
+      &lt;/ul>
+    &lt;/nav>
+    
+  &lt;/div><em>&lt;!-- END .menu-inner --></em>
+&lt;/div><em>&lt;!-- END #menu --></em></pre>
+				<p><code>.current_page_item</code> this will accent the menu item, on which page we're currently on.</p>
+                
+                <br><br>
+                <h4>Submenus</h4>
+                <p>Add easily submenus by adding another ul with the <code>submenu</code> class to the li you want.</p>
+                <pre>
+&lt;li>&lt;a href="index.html">Home&lt;/a>
+  &lt;ul class="<span>sub-menu</span>">
+    &lt;li>&lt;a href="index.html">Agency&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="index-portfolio.html">Portfolio&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="index-creative.html">Creative&lt;/a>&lt;/li>
+    ...
+  &lt;/ul>
+&lt;/li></pre>
+                                
+                <br><br>
+                <h4>Menu Options</h4>
+				<p>By default the menu will be hidden and opened by clicking on the hamburger icon.</p>
+              
+              	<div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.classic</code>
+						<p>By adding the classic class the menu will be visible on page load. <em>See index-bigbold.html</em></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div id="menu" class="clearfix <span>classic</span>">
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.throughline</code>
+						<p>The menu hover effect will have a line in the center of the menu item. <em>See index-bigbold.html</em></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div id="menu" class="clearfix <span>throughline</span>">
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.transition-enabled</code>
+						<p>This will add a transition effect (pseudo ajax) when going to another page. <em>See index.html</em></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div id="menu" class="clearfix <span>transition-enabled</span>">
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+                    
+                                
+            </div>        	
+        </section>
+        
+                
+        
+        <section id="hero">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Hero / Pagetitle</strong></h3>
+                <p>The hero section is the first content of your page after the header in the html markup.  It usually contains the page title of the page, but can also hold a slider or some other content </p>
+                <pre>
+...
+&lt;/header>
+
+<em>&lt;!-- HERO & BODY --></em>
+&lt;div id="hero-and-body">			
+  <span>&lt;section id="hero">
+    &lt;div class="page-title">
+      ...
+    &lt;/div>
+  &lt;/section></span>
+
+
+  &lt;section id="page-body">
+    ...
+  &lt;/section>
+  
+&lt;/div> 
+<em>&lt;!-- HERO & BODY --></em>
+...</pre>
+                <p>Please have a look at the different features <a href="#video-bg">Video Background</a>, <a href="#bg-parallax">Parallax Background</a> to know how to use them.</p>
+                
+                <p>The page-title section can contain any type of content but usually there is one or multiple "headings"  and some other small elements like buttons.</p>
+                <pre>
+&lt;section id="hero" class="hero-auto">
+ &lt;div id="page-title">
+  &lt;h1>&lt;strong>Main Title&lt;/strong>&lt;/h1>
+  &lt;h5 class="title-alt">A small subtitle&lt;/h5>
+ &lt;/div>
+&lt;/section></pre>
+
+				<br><br>
+                <h4>Hero options</h4>
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.hero-auto</code>
+                        <p>The height of the hero section is set on auto and depends on the content.</p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>&lt;section id="hero" class="<span>hero-auto</span>"></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.hero-full</code>
+                        <p>It takes the full height of your viewport/window height.</p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>&lt;section id="hero" class="<span>hero-full</span>"></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.hero-fullscreen</code>
+                        <p>The Hero area will take the whole screen space and the header is overlaying it.</p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>&lt;section id="hero" class="<span>hero-fullscreen</span>"></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.content-overlay</code>
+						<p>The content will overlay the hero area. <br><span class="tip-note">Note</span> Only use this in combination with hero-fullscreen. <em>See index-bigbold.html</em></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>&lt;section id="hero" class="<span>content-overlay</span>"></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.text-light</code>
+                        <p>If your her background is dark and you want to have white text for the content.</p>
+                    </div>.
+                    
+                    <div class="column two-third last-col">
+                    	<pre>&lt;section id="hero" class="<span>text-light</span>"></pre>
+                    </div>
+                </div>
+                
+                <br><br>
+                <h4>Page Title position</h4>
+                <p>If you use hero-full or hero-fullscreen you can position the pagetitle to the top or bottom.  By default it will be centered positioned.<br>
+                Use align-center or align-right to give the content a centered/right alignment</p>
+                <pre>
+&lt;section id="hero" class="hero-full">
+  &lt;div id="page-title" class="wrapper align-center <span>title-top</span>">
+  ...</pre>
+  
+				<pre>&lt;section id="hero" class="hero-full">
+  &lt;div id="page-title" class="wrapper align-center <span>title-bottom</span>">
+  ...</pre>
+                <br><br>
+            </div>        	
+        </section>
+        
+                
+        
+        <section id="portfolio">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Portfolio Setup</strong></h3>
+                
+                <p>The portfolio grid uses the isotope script which also have a filter option inlcuded.<br>
+                Please have also a look at the <a href="#isotope">isotope documentation</a>.</p>
+                
+                <br>
+            	<h4>General Portfolio Markup</h4>
+                <pre>
+&lt;div id="customgridid" class="isotope-grid portfolio-container isotope-spaced-huge style-column-2 offset-ultra portfolio-container">
+ 
+  &lt;div class="isotope-item portfolio-item <span>branding</span>">
+    &lt;div class="portfolio-item-inner item-inner">
+     &lt;div class="portfolio-media do-anim-modern">
+       &lt;a href="portfolio-single-main.html" class="<span>thumb-hover</span>">
+         <em>&lt;span class="overlay" style="background: #673c34;">&lt;/span></em>
+         &lt;img src="files/uploads/portfolio-thumb-6.jpg" alt="SEO">
+       &lt;/a>
+     &lt;/div>
+     &lt;div class="portfolio-info do-anim">
+       &lt;span class="portfolio-category">Digital&lt;/span>
+       &lt;h4 class="portfolio-name">&lt;a href="portfolio-single-main-1.html">&lt;strong>Nordcold XX&lt;/strong>&lt;/a>&lt;/h4>
+     &lt;/div>
+    &lt;/div>
+  &lt;/div>
+				
+  ... </pre>
+
+				<p><code>.branding</code> This is the name for the filter attribute. Thanks to this the script knows which item should be hidden or displayed when clicking on the filter (only for isotope needed).</p>
+				<p><code>thumb-hover</code> Adds a hover effect to the image. <small><a href="#hover">See here</a> for more infos</small></p>
+				<p><code>overlay</code> You can add a custom overlay color for your individual items.</p>
+				
+            </div>        	
+        </section>
+                
+        
+        <section id="portfolio-filter">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Filter</strong></h3>
+                
+                <p>As mentioned above, you can add a filter option in combination with the isotope script. <br>The filter action is placed into the header area (4 rectangular dots).  To do so add the icon in the header-action part.</p>
+                
+                <pre>
+&lt;div id="header-actions">
+  ...
+  &lt;div class="header-filter">&lt;div class="filter-icon action-filter open-action" data-action="filter-overlay">&lt;span>&lt;/span>&lt;/div>&lt;/div>
+  ...
+&lt;/div></pre>
+				<br>
+				<p>This Icon now opens the filter options in the header area which you need to include to the header-actions-overly part.</p>
+<pre>
+&lt;div id="header-actions-overlay">
+  &lt;a href="" class="action-close header-close">&lt;/a>
+  
+  &lt;div class="action-overlay filter-overlay">
+    &lt;h6 class="widget-title">Filter&lt;/h6>
+    &lt;ul id="grid-filter" class="category-list grid-filter" <span>data-related-grid="customgridid"</span>
+      &lt;li>&lt;a <span>data-filter=".advertising"</span> href="#">Advertising&lt;/a>&lt;/li>
+      &lt;li>&lt;a <span>data-filter=".branding"</span> href="#">Branding&lt;/a>&lt;/li>
+      &lt;li>&lt;a <span>data-filter=".digital"</span> href="#">Digital&lt;/a>&lt;/li>
+      &lt;li>&lt;a <span>data-filter="*"</span> href="#">All&lt;/a>&lt;/li>
+    &lt;/ul>
+  &lt;/div>
+
+  ...
+				
+&lt;/div> </pre>
+				<p>All filter anchors needs a <code>data-filter</code> attribute with the correct filter name (example: .branding).</p>
+                <p><span class="tip-important">Important</span> It's important that the value of <code>data-related-grid</code> has the same name than the id of the grid. </p>
+                
+            </div>        	
+        </section>
+    
+                        
+        <section id="portfolio-pagination">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Portfolio pagination</strong></h3>
+                
+				<p>Use the following markup for the portfolio pagination and put it outside of the #single-portfolio container</p>
+<pre>
+&lt;/div>
+<em>&lt;!-- SINGLE PORTFOLIO --></em>
+               
+&lt;div id="single-pagination" class="portfolio-pagination <span>fixed</span>">
+  &lt;ul class="pagination clearfix">
+    &lt;li class="next">&lt;a href="portfolio-single-main-4.html" <em>class="pseudo-ajax"</em>>
+      &lt;span class="text">Next&lt;/span>
+      &lt;span class="page-image" <em>style="background:#e8c0ce"</em>&lt;span>&lt;img src="files/uploads/1200x800.jpg" alt="SEO Name" />&lt;/span>&lt;/span>
+    &lt;/a>&lt;/li>
+    &lt;li class="prev">&lt;a href="portfolio-single-main-2.html" <em>class="pseudo-ajax"</em>>
+      &lt;span class="text">Prev&lt;/span>
+      &lt;span class="page-image" <em>style="background:#543b36"</em>&lt;span>&lt;img src="files/uploads/1200x800.jpg" alt="SEO Name" />&lt;/span>&lt;/span>
+    &lt;/a>&lt;/li>
+  &lt;/ul>
+&lt;/div> <em>&lt;!-- END #single-pagination --></em>
+                </pre>
+                <p><code>fixed</code> Choose between a fixed and non-fixed pagination style.  If you choose non-fixed, please delete or don't use the 'page-image' element as it is not needed.</p>
+                <p><code>pseudo-ajax</code> This is optional and adds a pseudo ajax effect <em>Use this in combination with fixed option</em></p>
+                <p><code>background</code> If you activated the pseudo ajax feature yo can optionally add a custom background color which will show when the pseudo ajax feature will animate.</em></p>
+                
+            </div>        	
+        </section>
+    
+                        
+        <section id="blog">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Blog</strong></h3>
+                
+                <p>Like the portfolio, the blog layout uses the isotope script to create the masonry effect.<br> 
+                Please have a look at the <a href="#isotope">isotope documentation</a> for more information about how it works.</p>
+                
+                <br>
+            	<h4>Item Markup</h4>
+                <pre>  
+&lt;div id="blog-grid" class="isotope-grid blog-container style-column-3 isotope-spaced">               
+                
+  &lt;div class="blog-item">
+    &lt;div class="blog-item-inner item-inner <em>do-anim</em>">
+      &lt;div class="blog-media">
+        &lt;a href="blog-single-classic.html" class="thumb-hover scale">
+          &lt;img src="files/uploads/600x400-light.jpg" alt="SEO">
+        &lt;/a>
+      &lt;/div>
+      &lt;div class="blog-info">
+        &lt;div class="post-meta">
+          &lt;span class="post-date">June 6, 2017&lt;/span>
+          &lt;span class="post-cat">&lt;a href="#"&lt;Travel&lt;/a>&lt;/span>
+        &lt;/div>
+        &lt;h3 class="post-name">&lt;a href="blog-single-classic.html">Waterfalls of Iceland&lt;/a>&lt;/h3>
+        &lt;p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas,...&lt;/p>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  
+  ..
+  
+ &lt;/div></pre>
+            
+            	<br><br>
+				<h4>Blog Comments</h4>
+				<p>Note that this is a pure html template, this means that the comments does not work of course.  To make them work you would need to use a database/php or any other comment system which can not be achieved with only html.</p>
+
+            </div>        	
+        </section>
+        
+        
+        <section id="fullwidth-section">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Fullwidth section</strong></h3>
+                <p>A <code>fullwidth-section</code> is a fullwidth section which have some sort of background (color,image,video,etc.) to seperate some specific content from default content.</p> 
+                <p><span class="tip-important">Important</span> A fullwidth section <strong>CAN NOT</strong> be placed into a wrapper element in order to take the full width!</p>
+                <pre>
+&lt;div class="fullwidth-section">
+  &lt;div class="fullwidth-content wrapper">
+  ...
+  &lt;/div>
+&lt;/div></pre>
+				
+                <br>
+                <h4>Options</h4>
+                <p>By default the fullwidth-section (actually the fullwidth-content) has a top & a bottom padding and will adapt to the content height.</p>
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.nopadding</code>
+                        <p>Add this class if you don't want any top/bottom padding.</p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="fullwidth-section" class="<span>nopadding</span>"></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.bigpadding</code>
+                        <p>Add this class if you want a bigger padding on the top and bottom (15%).</p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="fullwidth-section" class="<span>bigpadding</span>"></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.forcefullwidth</code>
+                        <p>By default the fullwidth will be limited by your general content width (see basic html structure).  You can force it to take the full width with this class.</p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="fullwidth-section" class="<span>forcefullwidth</span>"></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.text-light</code>
+                        <p>Add this class if you plan to use a dark background and wants that the logo and the content text should be displayed white.</p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="fullwidth-section" class="<span>text-light</span>"></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.text-dark</code>
+                        <p>Add this class if you plan to use a light background and wants that the logo and the content text should be displayed dark.</p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="fullwidth-section" class="<span>text-dark</span>"></pre>
+                    </div>
+                </div>
+                
+            </div>        	
+        </section>
+        
+        
+        <section id="isotope">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Isotope / Masonry</strong></h3>
+                
+                <p>The isotope script is used for all grid layouts (masonry, equal grid) for the Portfolio, Blog and Gallery.  All of them uses the isotope script to create the grid. <br><span class="tip-important">Important</span><small>Make sure to inlcude the <strong>jquery.isotope.min.js</strong> AND <strong>jquery.imagesloaded.min.js</strong> script.</small></p> 
+
+                
+                <br>
+            	<h4>General Markup</h4>
+                <pre>
+&lt;div id="<span>YOUR-GRID-ID</span>" class="isotope-grid <span>TYPE-container</span>">
+  
+  &lt;div class="isotope-item <span>TYPE-item</span>">
+    <em>&lt;!-- ITEM CONTENT --></em> ...
+  &lt;/div>
+  
+  &lt;div class="isotope-item <span>TYPE-item</span>">
+    <em>&lt;!-- ITEM CONTENT --></em> ...
+  &lt;/div>
+  
+  ... 
+  
+&lt;/div></pre>
+                <p><code>#YOUR-GRID-ID</code> I really recommend to use any custom id for each grid.  It is very important if you use a filter.<br>
+                <small>For example the portfolio, I used the id <code>#portfolio-grid</code>, for the blog I used <code>#blog-grid</code>, and so on.</small></p>
+                <p><code>.TYPE-container</code> Change "TYPE" with the type of your content (portfolio,blog or gallery)<br>
+                <small>For example the portfolio, I used the class <code>.portfolio-container</code>, for the blog I used <code>.blog-container</code>, and so on.</small></p>
+                <p><code>.TYPE-item</code> Change "TYPE" with the type of your content (portfolio,blog or gallery)<br>
+                
+                
+                <br><br>
+                <h4>Column Option</h4>
+                <p>You can choose between 2,3 or 4 columns.  Add the wanted class to the grid container element.</p>
+                <pre>
+&lt;div id="portfolio-grid" class="isotope-grid portfolio-container <span>style-column-2</span>">
+<em>Or</em>
+&lt;div id="portfolio-grid" class="isotope-grid portfolio-container <span>style-column-3</span>">
+<em>Or</em>
+&lt;div id="portfolio-grid" class="isotope-grid portfolio-container <span>style-column-4</span>"></pre>
+				<h6>Masonry</h6>
+                <p>To create a masonry effect you just need to use different image sizes. By using images (or the overall content of each item) with different image heights you can achieve a masonry effect as done in the masonry html example files.</p>
+                
+                <h6>Equal Grid</h6>
+                <p>If you want to have an equal grid, just add the class <code>fitrows</code> to the grid container element. This will force the different rows to always be aligned horizontally.</p>
+                <pre>&lt;div id="portfolio-grid" class="isotope-grid portfolio-container style-column-4 <span>fitrows</span>"></pre>
+                           	
+                <br><br>
+            	<h4>Metro Effect</h4>
+				<p>The metro effect give you the possibility to increase some tiles by respecting a given ratio.  To make use of this you need to provide the data-ratio option to the grid element. (see index-photography.html for example)</p>
+				<pre>&lt;div id="portfolio-grid" class="isotope-grid portfolio-container" <span>data-ratio="2:3"</span>></pre>
+				<p>Now you can additionally add the class <code>double-width</code> or <code>double-height</code> to some items to increase the width, height or both.</p>
+				<pre>&lt;div class="isotope-item portfolio-item <span>double-width</span>"></pre>
+              
+              
+                <br><br>
+            	<h4>Offset Appearance</h4>
+				<p>If you want to have an offset layout just add the class <code>offset-OPTION</code></p>
+				
+				<p><strong>These are the options</strong></p>
+				<ul>
+                	<li><code>offset-normal</code> Adds the normal offset (20px)</li>
+                	<li><code>offset-big</code> Adds the big offset (40px)</li>
+                	<li><code>offset-huge</code> Adds the huge offset (60px)</li>
+                	<li><code>offset-ultra</code> Adds the ultra offset (100px)</li>
+                	<li><code>offset-crazy</code> Adds the random (crazy) offset and items are randomly positioned. It is recommended to also use fitrows with the carzy option.</li>
+                </ul>
+				<p><strong>Example</strong></p>
+				<pre>&lt;div id="portfolio-grid" class="isotope-grid isotope-spaced-huge style-column-2 <span>offset-ultra</span> portfolio-container"></pre>
+				<pre>&lt;div id="portfolio-grid" class="isotope-grid isotope-spaced-huge style-column-2 <span>offset-crazy fitrows</span> portfolio-container"></pre>
+				<p>Please have also a look to the different portfolio html files to see how it works.</p>
+				
+               
+                            	
+                <br><br>
+            	<h4>Spaced</h4>
+                <p>You can easily add spacings (for both layout modes) by adding the class <code>isotope-spaced</code> to the container.</p>
+                <pre>&lt;div id="portfolio-grid" class="isotope-grid portfolio-container <span>isotope-spaced</span>"></pre>
+                <p><code>isotope-spaced</code> will add a spacing.</p>
+                <p>If you want a bigger spacing, add <code>isotope-spaced-big</code> or <code>isotope-spaced-huge</code> to add a bigger spacing between the tiles.</p>
+                
+                <br><br>
+                <h4 class="colored"><strong>Filter Grid</strong></h3>
+                
+                <p>You can easily filter your different grids with some filter anchors.  In the original demo pages, the filter option is only used for the portfolio items but you could also use it for the other types (blog,gallery,...).<br>
+                To begin with add the filter class names to your isotope-items</p>
+                
+                <pre>
+&lt;div id="portfolio-grid" class="isotope-grid portfolio-container">
+
+  &lt;div class="isotope-item portfolio-item <span>branding</span>"> 
+  ...
+  &lt;div> 
+
+  &lt;div class="isotope-item portfolio-item <span>photography</span>"> 
+  ...
+  &lt;div>
+
+...</pre>
+				<br><br>
+                <p>Now, place the filter list somewhere.  Usually it is place just before the grid but you can place the filter wherever you want.  Thanks to the <code>data-related-grid</code> option the filter knows which grid it shall address to.<br>
+                Use this code</p>
+                
+                <pre>
+&lt;ul id="portfolio-filter" class="filter" data-related-grid="<span class="colored">portfolio-grid</span>">
+  &lt;li class="active" >&lt;a href="#" data-filter="<span class="colored">*</span>">Show All&lt;/a>&lt;/li>
+  &lt;li>&lt;a data-filter="<span class="colored">.branding</span>" href="#" title="Branding">Branding&lt;/a>&lt;/li>
+  &lt;li>&lt;a data-filter="<span class="colored">.web</span>" href="#" title="Print">Web Design&lt;/a>&lt;/li>
+  &lt;li>&lt;a data-filter="<span class="colored">.photography</span>" href="#" title="Print">Photography&lt;/a></li>
+&lt;/ul></pre>
+
+				<p>All filter anchors needs a <code>data-filter</code> attribute with the correct filter name you also added to the yout items (example: .branding).</p>
+                <p><span class="tip-important">Important</span> It's important that the value of <code>data-related-grid</code> has the same name than the id of the grid/container element. </p>
+                
+            </div>        	
+        </section>
+        
+        
+        <section id="slider">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Slider</strong></h3>
+              
+                <p>Markup for a default media (image,video) slider.</p>
+                <pre>
+&lt;div class="owl-slider nav-light" data-nav="true">
+  &lt;div>&lt;img src="files/uploads/blog-single-3.jpg" alt="SEO Name"/>&lt;/div>
+  &lt;div>&lt;img src="files/uploads/blog-single-4.jpg" alt="SEO Name"/>&lt;/div>
+&lt;/div></pre>
+				<p>Markup for a content/text slider.</p>
+                <pre>
+&lt;div class="owl-slider <span>content-slider</span>">
+  &lt;div> <em>... CONTENT ...</em> &lt;/div>
+  &lt;div> <em>... CONTENT ...</em> &lt;/div>
+&lt;/div></pre>
+			
+                <br><br>
+				<h4>Include Slider to Hero</h4>
+				<p>When including the slider to hero you just need add your image as a background like this (see blog-magazine-full.html for example)</p>   
+               	<pre>
+&lt;div class="owl-slider hero-slider" data-autoplay="true" data-loop="true" data-dots="false">
+ 
+  &lt;div class="slider-item text-light">
+    &lt;div class="bg-img" style="background-image:url(files/uploads/1680x1100-dark.jpg);">&lt;/div>
+    <em>&lt;a href="blog-single-split1.html" class="sr-button style-3 button-small read-more">Read More&lt;/a>
+    &lt;div class="owl-slider-caption">
+      &lt;h5 class="title-alt">Fashion&lt;/h5>
+      &lt;div class="spacer-small">&lt;/div>
+      &lt;h2>&lt;strong>Winter Campaign by David Oliver&lt;/strong>&lt;/h2>
+    &lt;/div></em>
+  &lt;/div>
+  
+  ...
+  
+&lt;/div></pre>
+				<p>You can optionally add a caption and link.</p>
+                
+                <br><br>
+            	<h4>Slider Options</h4>
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>data-nav</code>
+                        <p>Enable/Disable the arrows with true or false.<br><small><strong>Default = true</strong></small></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="owl-carousel ..." <span>data-nav="false"</span>>
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>data-dots</code>
+                        <p>Enable/Disabled the bullets/dots with true or false.<br><small><strong>Default = true</strong></small></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="owl-carousel ..." <span>data-dots="false"</span>>
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>data-loop</code>
+                        <p>Enable/Disabled the looping with true or false.<br><small><strong>Default = false</strong></small></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="owl-carousel ..." <span>data-loop="true"</span>>
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>data-autoplay</code>
+                        <p>Enable/Disabled the autoplay with true or false.<br><small><strong>Default = false</strong></small></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="owl-carousel ..." <span>data-autoplay="true"</span>>
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>nav-light</code>
+                        <p>By default the navigation dots have a dark appearance.  If your carousel is on a dark background you might change this with the nav-light class.</p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="owl-carousel <span>nav-light</span> ..." >
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+            </div>        	
+        </section>
+  
+        
+        <section id="lightbox">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Lightbox</strong></h3>
+                <p>The lightbox option uses the lightbox script.  Add the class <code>data-rel="lightcase:CUSTOMGALLERYNAME"</code> to the anchor tags you would like to open in a lightbox.</p>
+                <br>
+                <h5>Image lightbox</h5>
+                <pre>
+&lt;a href="files/uploads/image-big.jpg" data-rel="lightcase:gallery1">
+   &lt;img src="files/uploads/image.jpg" alt="SEO IMG NAME">
+&lt;/a></pre>  
+
+				<br>
+                <h5>Video lightbox</h5>
+                <pre>
+&lt;a href="http://www.youtube.com/embed/6v2L2UGZJAM" data-rel="lightcase">Youtube Video&lt;/a>
+&lt;a href="http://player.vimeo.com/video/110894499" data-rel="lightcase">Vimeo Video&lt;/a>
+&lt;a href="files/uploads/coffee.mp4" data-rel="lightcase">Selfhosted Video&lt;/a></pre>
+				<p>If using youtube/vimeo videos, make sure to enter the url which is provided on the embedded iframe code on 'src'<br>
+Example Vimeo: http://player.vimeo.com/video/VIMEOID<br>
+Example Youtube: http://www.youtube.com/embed/YOUTUBEID</p>        
+                
+            </div>        	
+        </section>
+        
+        <section id="bg-parallax">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Background Parallax</strong></h3>
+                <p>You can add a parallax image to every element but usually it's used for the Hero Section or an Fullwidth Section.</p>        
+                <p>Add the class <code>parallax-section"</code> (and optionally 'text-light' if you use a dark background), and the <code>data-parallax-image</code>.</p>
+                <pre>&lt;div class="fullwidth-section text-light <span>parallax-section</span>" <span>data-parallax-image="files/uploads/parallaxbg.jpg"</span>></pre>
+                <p><small>Make sure to inlcude the <strong>jquery.backgroundparallax.min.js</strong> AND <strong>tweenMax.js</strong> script. The tweenmax is not mandatory but will make it smoother especially for google chrome.</small></p> 
+                
+            </div>        	
+        </section>
+        
+        
+        <section id="video">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Video</strong></h3>        
+                <p>You have 5 possibilities to integrate videos to your pages. <small>See also media-video.html</small></p>
+                <ol>
+                	<li><strong>Classic integration</strong> by iframe code</li>
+                	<li><strong>Selfhosted</strong> with mediaelement script</li>
+                	<li><strong>Inline video</strong> with image placeholder</li>
+                	<li><strong>Lightbox video</strong> open with an anchor tag</li>
+                	<li><strong>Background videos</strong> for hero section, fullwidth sections or columns</li>
+                </ol>
+                
+                <br>
+                <h4>Classic integration</h4>
+                <p>Just go to your video site (youtube, vimeo or others) and search for the <strong>embedding iframe code</strong> and just put it on your page where you want.</p><p>Example for a youtube video.
+                <pre>&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/9dgSa4wmMzk" frameborder="0" allowfullscreen></iframe></pre></p>
+                <p><span class="tip-important">Important</span> For responsive reasons, make sure to include the javascript <strong>jquery.fitvids.min.js</strong>.  This will automatically adapt the video (iframe) to its parent container.
+                </p>
+                
+                <br>
+                <h4>Selfhosted Video</h4>
+                <p>Include the <strong>mediaelement-and-player.min.js</strong> and css for the template controls.</p>
+                <pre>
+&lt;video width="640" height="360" id="player1" poster="files/uploads/poster.jpg" controls preload="none">
+  &lt;source type="video/mp4" src="files/uploads/videofile.mp4" />
+  &lt;source type="video/webm" src="files/uploads/videofile.webm" />
+  &lt;source type="video/ogv" src="files/uploads/videofile.ogv" />
+&lt;/video></pre>
+
+				<br>
+                <h4>Inline Video</h4>
+                <p>An inline video will first show a placeholder image with a play button, and when this button is clicked it will load and play the video.</p>
+                <p>Inline videos are only possible for youtube + vimeo videos.  The video will automatically adapt to the size of the inline-element so you might have black border on the top/bottom or left/right</p>
+                <p>Add a new div element with class inline-video and add the different data options.</p>
+                <pre>
+&lt;div class="inline-video" data-type="youtube" data-videoid="9dgSa4wmMzk">
+  &lt;img src="files/uploads/img-placeholder.jpg" alt="SEO NAME">
+&lt;/div></pre>
+				<p><code>data-type</code> enter youtube or vimeo</p>
+                <p><code>data-videoid</code> add the id of the youtube or vimeo video</p>
+                
+                <br>
+                <h4>Lightbox Video</h4>
+                <p>If using a lighbox video make sure to inlcude the javascript jquery.lightcase.min.js script and related css.</p>
+                <p>Add an anchor tag with the data-rel attribute lightcase</p>
+                <pre>
+&lt;a href="http://www.youtube.com/embed/9dgSa4wmMzk" data-rel="lightcase">Youtube Video&lt;/a>
+&lt;a href="http://player.vimeo.com/video/110894499" data-rel="lightcase">Vimeo Video&lt;/a>
+&lt;a href="files/uploads/video.mp4" data-rel="lightcase">Slefhosted Video&lt;/a></pre>
+                <p>
+                	<strong>For youtube + vimeo videos you MUST use the embed link.</strong><br>
+                    <strong>Youtube</strong>: http://www.youtube.com/embed/<strong>YOUTUBE-ID</strong><br>
+                    <strong>Vimeo</strong>: http://player.vimeo.com/video/<strong>VIMEO-ID</strong>
+                </p>
+                
+                <br>
+                <h4>Background Video</h4>
+                <p>In fact you can add a background video to every kind of element but I probably mostly used for a <a href="#hero">Hero Section</a> or <a href="#fullwidth-section">Fullwidth Section</a>.</p>
+                <p>Video backgrounds uses the Phat Video script so make sure the file is correctly inlcuded.  <br>The script allows to use <strong>selhosted, youtube or vimeo</strong> files.</p>
+                <p>To do so, just add the class <code>videobg-section</code> to the element and add the different options</p>
+                <pre>
+&lt;section id="hero" class="hero-auti <em>forceratio</em> <span>videobg-section</span>"
+  data-phattype="youtube" 
+  data-phatvideoid="9dgSa4wmMzk"
+  data-phatratio="21/9"
+  data-videoloop="true"
+  data-phatloop="true"
+  data-phatplaypause="true"
+  data-phatplaymobile="true"
+  data-phatposter="files/uploads/image.jpg"
+  data-phatoverlaycolor="#000000"
+  data-phatoverlayopacity="0.4"
+  ></pre>
+				<p><span class="tip-note">Note</span> By adding the <code>forceratio</code> class, it will respect the given ratio and adapt it responsively.  When using it for the hero, make sure it is set to hero-auto. <em>See portfolio-single-video.html</em></p>
+  				<h6>Background video options</h6>
+                <ul>
+                	<li><code>data-phattype</code> <em>Choose type</em>: <strong>youtube, vimeo, html5</strong></li>
+                	<li><code>data-phatvideoid</code> <em>Enter youtube/vimeo id (only needed if phattype is youtube or vimeo)</em></li>
+                	<li><code>data-phatmp4</code> <em>url to mp4 file (only needed if phattype is html5)</em></li>
+                	<li><code>data-phatwebm</code> <em>url to webm file (only needed if phattype is html5)</em></li>
+                	<li><code>data-phatogv</code> <em>url to ogv file (only needed if phattype is html5)</em></li>
+                	<li><code>data-phatratio</code> <em>Aspect ratio of the video</em> <strong>4/3, 16/9 or 21/9</strong></li>
+                	<li><code>data-phatloop</code> <em>Enable loop</em> <strong>true or false</strong> (default is true)</li>
+                	<li><code>data-phatmute</code> <em>Mute the video</em> <strong>true or false</strong> (default is true)</li>
+                	<li><code>data-phatplaypause</code> <em>Adds Play Pause Button</em> <strong>true or false</strong> (default is true)</li>
+                	<li><code>data-phatplaymobile</code> <em>Adds a play button for mobile device</em> <strong>true or false</strong> (default is false)</li>
+                	<li><code>data-phatposter</code> <em>Poster image for mobile devices</em></li>
+                	<li><code>data-phatoverlaycolor</code> <em>Overlay color</em> (Enter the color code, #000 for example)</li>
+                	<li><code>data-phatoverlayopacity</code> <em>Overlay opacity</em> (Enter value between 0 + 1)</li>
+                	<li><code>data-phatplayonhover</code> <em>Video plays on hover only</em> <strong>true or false</strong> (default is false)</li>
+                </ul>
+                <p class="alert-note"><strong>Background videos are not supported by mobile devices (tablets,smartphones). In this case the poster image will show instead.  That's why it's important to declare a poster image.</strong></p>
+                
+            </div>        	
+        </section>
+        
+        <section id="audio">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Audio</strong></h3>        
+                <p>Includes audio clasically via embed/ifram code from your audio service (soudncloud,mixcloud,...) or use a selhosted audio file.</p>
+                
+                <h4>Classic integration (embed/iframe)</h4>
+                <p>Just go to your audio site (soudncloud, mixcloud or others) and search for the <strong>embedding iframe code</strong> and just put it on your page where you want.</p>
+                
+                <br>
+                <h4>Selfhosted Audio</h4>
+                <p>Include the <strong>mediaelement-and-player.min.js</strong> and css for the template controls.</p>
+                <pre>
+&lt;audio id="player2" poster="files/uploads/poster-image.jpg" controls>
+  &lt;source type="audio/mp3" src="files/uploads/audiofile.mp3"/>
+&lt;/audio></pre>
+                
+            </div>        	
+        </section>
+        
+        
+        <section id="lazy">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Lazy Load</strong></h3>
+                <p>The template has a lazy load feature included which you could use for all <code>&lt;img></code>.<br>The example html files only make use of it in the portfolio single files for big images.  Thanks to this the images are only loaded if they get visible on the viewport which increases the loading speed on first pageload.</p>
+                <p>Just add the class lazy to the <code>&lt;img</code> tag, use the <code>data-src</code> instead of <code>src</code> and add the exact width + height values.</p>
+                <pre>&lt;img <span>class="lazy" data-src="files/uploads/1200x800-light.jpg" width="1200" height="800"</span> alt="Image Desc"></pre>
+                
+                
+         	</div>        	
+        </section>
+        
+        
+        <section id="googlemap">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Google map</strong></h3>
+                
+				<p>To make the google map work, you need to create a google API Key here:<br><a href="https://developers.google.com/maps/documentation/javascript/get-api-key">https://developers.google.com/maps/documentation/javascript/get-api-key</a></p>
+              		
+				<p>Once you created your API key just go to the contact.html and add it here<br>
+				<pre>&lt;script src="//maps.google.com/maps/api/js?key=<span>YOURAPIKEY</span>">&lt;/script></pre></p>
+               		
+                
+            </div>        	
+        </section>
+        
+        
+        <section id="grid">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Columns / Grid</strong></h3>        
+                                                                                        
+                <p>The template usesa custom but easy to use grid / column. Choose up to 6 columns.  <small>See also elements-columns.html</small></p>
+                <ul>
+                	<li><code>one-full</code></li>
+                	<li><code>one-half</code></li>
+                	<li><code>one-third</code> <code>two-third</code></li>
+                	<li><code>one-fourth</code> <code>two-fourth</code> <code>three-fourth</code></li>
+                	<li><code>one-fifth</code> <code>two-fifth</code> <code>three-fifth</code> <code>four-fifth</code></li>
+                	<li><code>one-sixth</code> <code>two-sixth</code> <code>three-sixth</code> <code>four-sixth</code> <code>five-sixth</code></li>
+                </ul>
+                <p>Follow this markup</p>
+                <pre>
+&lt;div class="column-section clearfix">
+  &lt;div class="column one-half">
+    ..
+  &lt;/div>
+  &lt;div class="column one-half last-col">
+    ..
+  &lt;/div>
+&lt;/div> <em>&lt;!-- END .column-section --></em></pre>
+                <p><code>.last-col</code> The last column of the row always needs the class last-col</p>
+                
+                <br><br>
+                <h4>Column / Grid Options</h4>
+                <p>By default the columns has a spacing of 25 px but can be changed with these options.</p>
+              
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.spaced-big</code>
+                        <p>Uses a bigger spacing of 80px.</small></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="column-section <span>spaced-big</span> clearfix">
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.spaced-none</code>
+                        <p>Does not have any spacings.</small></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="column-section <span>spaced-none</span> clearfix">
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.col-align-center</code>
+                        <p>It will horizontally align all columns in the section to the center</small></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="column-section <span>col-align-center</span> clearfix">
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+                <div class="column-section clearfix">
+                	<div class="column one-third">
+                    	<code>.col-align-bottom</code>
+                        <p>It will horizontally align all columns in the section to the bottom</small></p>
+                    </div>
+                    
+                    <div class="column two-third last-col">
+                    	<pre>
+&lt;div class="column-section <span>col-align-bottom</span> clearfix">
+  ...
+&lt;/div></pre>
+                    </div>
+                </div>
+                
+            </div>        	
+        </section>
+        
+        <section id="contact">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Contact Form</strong></h3>
+                <p>You can setup Contact Forms anywhere on on any of your pages.</p>
+                
+                <br>
+                <h4>Change Recepient Email Adress</h4>
+                <p>Before getting to the html markup, go to <strong>php/contact-send.php</strong> and change your email adress and name.  To this email, the form is sended.</p>
+                <pre>
+$recipientemail = "youremail@host.com"; <em>// Your Email Address</em>
+$recipientname = "Your Name"; <em>// Your Name</em></pre>
+
+				<br>
+                <h4>Default html markup</h4>
+                <pre>
+&lt;form id="contact-form" class="checkform sendemail" action="php/contact-send.php" method="post">
+ <span> &lt;div class="form-row">
+    &lt;label for="name">Name &lt;abbr title="required" class="required">*&lt;/abbr>&lt;/label>
+    &lt;input type="text" name="name" id="name" class="name <strong>req</strong>" value="" />
+  &lt;/div></span>
+
+  <span>&lt;div class="form-row">
+    &lt;label for="email">Email &lt;abbr title="required" class="required">*&lt;/abbr>&lt;/label>
+    &lt;input type="text" name="email" id="email" class="email <strong>req</strong>" value="" />
+  &lt;/div></span>
+    
+  <span>&lt;div class="form-row">
+    &lt;label for="message">Message &lt;abbr title="required" class="required">*&lt;/abbr>&lt;/label>
+    &lt;textarea name="message" id="message" class="message <strong>req</strong>" rows="15" cols="50">&lt;/textarea>
+  &lt;/div></span>
+
+  &lt;div class="form-row form-note">
+    &lt;div class="alert-error">&lt;p>Please check your entries!&lt;/p>&lt;/div>
+  &lt;/div>
+  
+  &lt;div class="form-row hidden">
+    &lt;input type="text" id="form-check" name="form-check" value="" class="form-check" />
+  &lt;/div> <em><!-- Spam check field --></em>
+
+  &lt;div class="form-row">
+    &lt;input type="submit" name="submit" class="submit" value="Send Message"/>
+  &lt;/div>
+
+  &lt;input type="hidden" name="subject" value="Contact Subject Orio html"/>
+  &lt;input type="hidden" name="fields" value="<span>name,email,message</span>"/>
+&lt;/form></pre>       
+                <p><span class="tip-important">Important</span>Your contact form needs at least the above 3 fields for name,email and message. Do not change the for,name,id or class attribute of these fields.</p>
+                
+                <br>
+                <h4>Adding custom fields</h4>
+                <p>You can easily add custom field by adding new fields and adding the name of these fields to the <code>input ... name="field"</code></p>
+                <pre>
+&lt;form id="contact-form" class="checkform sendemail" action="php/contact-send.php" method="post">
+  
+  ...
+  
+  &lt;div class="form-row">
+    &lt;label for="website">Website &lt;abbr title="required" class="required">*&lt;/abbr>&lt;/label>
+    &lt;input type="text" name="<span>website</span>" id="website" class="website <span>req</span>" value="" />
+  &lt;/div>
+  
+  ...
+  
+  &lt;input type="hidden" name="fields" value="name,email,message,<span>website</span>"/>                
+&lt;/form></pre>      
+				<p><code>req</code> Add the req class to the field wich are required and can not be left empty.  If not needed, also drop the <code>&lt;abbr></code> tag.</p> 
+                
+                <br>
+                <h4>Problem receiving Emails</h4>
+                <p>Check your Spam folder.  The Message might be marked as Spam.</p>
+                
+                <p>If you're still not receiving Emails, it's possible that your Server doesn't support PHP mail() function. But you can use SMTP Authentication.<br>
+Go to <strong>php/contact-send.php</strong> and find the following line of code</p>
+                <pre>$mail = new PHPMailer();</pre>
+                <p>Add this code after the above line and adapt your settings</p>
+                <pre>
+$mail->IsSMTP();
+$mail->Host = "mail.yourdomain.com";
+$mail->SMTPDebug = 2;
+$mail->SMTPAuth = true;
+$mail->Host = "mail.yourdomain.com";
+$mail->Port = 26;
+$mail->Username = "youremail@host.com";
+$mail->Password = "yourpassword";</pre>
+                
+                
+            </div>        	
+        </section>
+        
+        <section id="animation">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Animations</strong></h3>    
+                <p>In general you can animate every element. Just add the class <code>do-anim</code> to your element. This element will be hidden on start and as soon as it gets visible it displays.</p>
+                
+                <br>
+				<h5>Slide In effect</h5>
+				<p>You can add this animation effect to any element you want.</p>
+                <pre>&lt;div class="column one-third <span>do-anim</span>"></pre> 
+                                
+               	<br>
+				<h5>Modern animation</h5>
+				<p>The modern effect is used for images, but do not add the class to the img tag, but to a parent container.</p>
+				<pre>&lt;div class="<span>do-anim-modern</span>"> &lt;img ...> &lt;/div></pre>
+                                 
+            </div>        	
+        </section>
+        
+        <section id="hover">
+        	<div class="section-inner wrapper">
+                <h3 class="colored section-title"><strong>Hover Effects</strong></h3>
+                
+				<p>If you want to add a hover effect to any image wrap the image with an anchor tag and add the class thumb-hover to it.</p>
+				<pre>&lt;a href="..." <span>class="thumb-hover"</span>></pre>
+               	<p>Now you need to choose which hover effect</p>
+				<ul>
+					<li><code>scale</code></li>
+					<li><code>overlay-color</code> to add a color effect</li>
+					<li><code>text-light</code> or <code>text-dark</code> to choose the color of the caption if used</li>
+				</ul> 
+                
+           	</div>        	
+        </section>
+        
+        <section id="spacer">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Spacer</strong></h3>
+				<p>To create and manage your white space you can use the spacer element which you will see in almost all of the original tempalte files. There are 4 different sizes.</p>
+               	<pre>
+&lt;div class="spacer-mini">&lt;/div>
+
+&lt;div class="spacer-small">&lt;/div>    
+
+&lt;div class="spacer-medium">&lt;/div> 
+
+&lt;div class="spacer-big">&lt;/div></pre>
+               
+               	<br>
+				<p>Additionally you can add the class <code>hidden-768</code> or <code>hidden-1024</code> to hide the spacers for a smaller devices.</p>
+               	<pre>
+&lt;div class="spacer-big <span>hidden-768</span>">&lt;/div></pre>
+                
+        	</div>        	
+        </section>
+        
+        <section id="credits">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Ressources / Credits</strong></h3>
+                
+                <h4>Javascipt / jQuery</h4>
+                <ul>
+                	<li><a target="_blank" href="http://jquery.com/">jQuery by John Resig</a></li>
+                	<li><a target="_blank" href="http://isotope.metafizzy.co/">Isotope by David DeSandro</a></li>
+                	<li><a target="_blank" href="http://gsgd.co.uk/sandbox/jquery.easIng.php">Easing by George Smith</a></li>
+                	<li><a target="_blank" href="http://owlgraphic.com/owlcarousel/index.html">Owlcarousel by Bartosz Wojciechowski</a></li>
+                	<li><a target="_blank" href="http://fitvidsjs.com/">Fit-Vids by Chris Coyier</a></li>
+                	<li><a target="_blank" href="https://github.com/teamdf/jquery-visible/">jQuery vissible by Digital Fusion</a></li>
+                	<li><a target="_blank" href="http://greensock.com/tweenmax">Tweenmax by Greensock</a></li>
+                	<li><a target="_blank" href="http://cornel.bopp-art.com/lightcase/">Lightcase by Cornel Bopp Art </a></li>
+                	<li><a target="_blank" href="http://codecanyon.net/item/slider-revolution-responsive-jquery-plugin/2580848">Revolution Slider by Themepunch</a></li>
+                </ul> 
+                
+                <h4>CSS / Fonts</h4>
+                <ul>
+                	<li><a target="_blank" href="http://ionicons.com/">Ionicons</a></li>
+                	<li><a target="_blank" href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a></li>
+                	<li><a target="_blank" href="https://www.google.com/fonts">Google Fonts</a></li>
+                </ul> 
+                
+                <h4>PHP / Misc</h4>
+                <ul>
+                	<li><a target="_blank" href="https://github.com/PHPMailer/PHPMailer">Php Mailer</a></li>
+                </ul>        
+                
+                
+            </div>        	
+        </section>
+        
+        <section id="changelog">
+        	<div class="section-inner wrapper">
+            	
+                <h3 class="colored section-title"><strong>Changelog</strong></h3>
+                
+                <h4>Version 1.0</h4>
+                <p>Initial release</p>        
+                
+                
+            </div>        	
+        </section>
+        
+    
+    </div>
+
+</div><!-- #page -->    
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+
+/* -----------------------------------------------------------------------------------
+
+CUSTOM COLOR
+___________
+
+Copy this to your custom css file if you want to use any custom color.
+You can of course add the color to even more elements than just the ones which are listed below
+
+----------------------------------------------------------------------------------- */
+
+.colored { color: #1dcbe5; }
+
+.filter-icon:hover span, .filter-icon:hover span::after, .filter-icon:hover span::before,
+#header-actions-overlay .action-close:hover::after, #header-actions-overlay .action-close:hover::before
+{ background: #1dcbe5; }
+
+.search:hover, .text-light .search:hover,
+.arrow:hover, .text-light .arrow:hover { fill: #1dcbe5; }
+
+#page-pagination .pagination li.page span.current,
+#page-pagination .pagination li.page a:hover,
+a:hover,
+.text-light a:hover, a.text-light:hover, .text-dark a.text-light:hover { color: #1dcbe5; }
+
+p a:not(.entry-navigation__item):not(.post-edit-link):not(.fancybox):not(.button):not(.image-text-link),
+.inline-video:hover::before, .inline-lightcase:hover::before { border-color: #1dcbe5; }
+
+h1:not(.product-name) a, h2:not(.product-name) a, h3:not(.product-name) a, h4:not(.product-name) a, h5:not(.product-name) a, h6:not(.product-name) a,
+.widget ul:not(.socialmedia-widget) li a { background-image: linear-gradient(#1dcbe5, #1dcbe5) !important; }
+
+.sr-button.style-3, .text-dark .sr-button.style-3 { border-color: #1dcbe5 !important; }
+.text-light .sr-button.style-3 { border-color: #1dcbe5 !important; }
+
+/* shop elements */
+.price ins .amount,
+.woocommerce .shop_table .product-subtotal .amount,
+.woocommerce .cart-collaterals .order-total .amount,
+.header-cart .cart-open:hover { color: #1dcbe5; opacity: 1; }
+
+/* Menu line */
+nav#main-nav ul > li > a::after, #menu ~ #header-actions-overlay .action-overlay .category-list li a::after { background: #1dcbe5 !important; }
+
+/* Loader icon */
+body:not(.loader-dot) .loader-icon::after,
+body.loader-dot .loader-icon::after,
+.load-isotope .load-isotope-icon:before,
+body:not(.loader-dot) #lightcase-loading::after,
+body.loader-dot #lightcase-loading::after { background: #1dcbe5 !important; }
